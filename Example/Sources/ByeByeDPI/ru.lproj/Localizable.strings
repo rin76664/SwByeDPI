@@ -29,6 +29,8 @@
 "settingsByeDPIStrategyTestOptionDesc" = "Тестирование работы стратегий ByeDPI";
 "settingsByeDPITestAnalyzerOption" = "Подбор стратегии";
 "settingsByeDPITestAnalyzerOptionDesc" = "Синтез оптимальной стратегий ByeDPI на основе результатов тестирования";
+"settingsByeDPIDebugOption" = "Отладка стратегии";
+"settingsByeDPIDebugOptionDesc" = "Тестирование работы стратегии ByeDPI с возможностью изменения команд";
 "settingsDomainsListOption" = "Списки доменов";
 "settingsDomainsListOptionDesc" = "Создавайте, изменяйте или удаляйте домены для тестирования стратегий и их фильтрации при работе byeDPI";
 "settingsStrategiesListOption" = "Списки стратегий";
@@ -99,6 +101,11 @@
 "byeDPITestAnalyzerApply" = "Применить";
 "byeDPITestAnalyzerCopy" = "Скопировать";
 "byeDPITestAnalyzerNoTestResults" = "Нет данных о результатах проверки стратегий. Сначала выполните тестирование";
+
+"byeDPIDebugNavTitle" = "Отладка стратегии";
+"byeDPIDebugStart" = "Начать проверку";
+"byeDPITestStop" = "Остановить";
+"byeDPIDebugDetails" = "Результаты тестов";
 
 "domainsListNavTitle" = "Списки доменов";
 "domainsListCreate" = "Создать список";

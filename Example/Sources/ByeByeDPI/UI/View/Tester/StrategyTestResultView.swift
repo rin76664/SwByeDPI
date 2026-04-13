@@ -38,7 +38,7 @@ struct StrategyTestResultView: View {
     @State fileprivate var _expanded: Bool
     @State fileprivate var _strategyActionSheetShow: Bool
     
-    init(strategyCmdArgs: [String], totalDomainRequestsCount: Int, domainsSuccessTestResults: [(domain: String, successRequestsCount: UInt8, failRequestsCount: UInt8)]) {
+    init(strategyCmdArgs: [String], totalDomainRequestsCount: Int, domainsSuccessTestResults: [(domain: String, successRequestsCount: UInt8, failRequestsCount: UInt8, successTest: Bool)]) {
         self._strategyCmdArgs = strategyCmdArgs
         self._strategyCmdLine = strategyCmdArgs.joined(separator: " ")
         var calculatedTotalDomainRequestsCount = 0
@@ -48,7 +48,7 @@ struct StrategyTestResultView: View {
             successRequestsCount += Int(entry.successRequestsCount)
             let totalDomainTestRequests = Int(entry.successRequestsCount) + Int(entry.failRequestsCount)
             calculatedTotalDomainRequestsCount += totalDomainTestRequests
-            treeEntries.append(DomainTestResultTreeEntry(domain: entry.domain, successRequestsCount: Int(entry.successRequestsCount), totalRequestsCount: totalDomainTestRequests))
+            treeEntries.append(DomainTestResultTreeEntry(domain: entry.domain, successRequestsCount: Int(entry.successRequestsCount), totalRequestsCount: totalDomainTestRequests, successTest: entry.successTest))
         }
         self._successDomainRequestsCount = successRequestsCount
         if (calculatedTotalDomainRequestsCount > totalDomainRequestsCount) {
@@ -138,7 +138,7 @@ struct StrategyTestResultView: View {
             DisclosureGroup(isExpanded: $_expanded, content: {
                 ForEach(_domainsSuccessTestResults) { domainTestResult in
                     VStack(alignment: .leading, spacing: .zero) {
-                        DomainTestResultView(domain: domainTestResult.domain, successRequestsCount: UInt8(domainTestResult.successRequestsCount), totalRequestsCount: UInt8(domainTestResult.totalRequestsCount))
+                        DomainTestResultView(domain: domainTestResult.domain, successRequestsCount: UInt8(domainTestResult.successRequestsCount), totalRequestsCount: UInt8(domainTestResult.totalRequestsCount), successTest: domainTestResult.successTest)
                         Divider()
                     }
                     .id(domainTestResult.domain)
@@ -166,6 +166,7 @@ fileprivate struct DomainTestResultTreeEntry: Identifiable {
     fileprivate let domain: String
     fileprivate let successRequestsCount: Int
     fileprivate let totalRequestsCount: Int
+    fileprivate let successTest: Bool
     
 }
 
@@ -177,32 +178,32 @@ fileprivate struct DomainTestResultTreeEntry: Identifiable {
     ScrollView(.vertical) {
         VStack(alignment: .center, spacing: 8.0) {
             StrategyTestResultView(strategyCmdArgs: ["-cmd", "-arg", "-name", "-dat"], totalDomainRequestsCount: totalDomainRequestsCount, domainsSuccessTestResults: [
-                (domain: "site.com", successRequestsCount: UInt8(1), failRequestsCount: domainRequestsCount - 1),
-                (domain: "site2.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount),
-                (domain: "sub.domain.site.com", successRequestsCount: UInt8(2), failRequestsCount: 0),
-                (domain: "site-another.com", successRequestsCount: UInt8(1), failRequestsCount: domainRequestsCount - 1),
-                (domain: "site3.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount),
+                (domain: "site.com", successRequestsCount: UInt8(1), failRequestsCount: domainRequestsCount - 1, successTest: true),
+                (domain: "site2.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount, successTest: false),
+                (domain: "sub.domain.site.com", successRequestsCount: UInt8(2), failRequestsCount: 0, successTest: true),
+                (domain: "site-another.com", successRequestsCount: UInt8(1), failRequestsCount: domainRequestsCount - 1, successTest: true),
+                (domain: "site3.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount, successTest: false),
             ])
             StrategyTestResultView(strategyCmdArgs: ["-cmd2", "-arg2", "-name2", "-dat2"], totalDomainRequestsCount: totalDomainRequestsCount, domainsSuccessTestResults: [
-                (domain: "site.com", successRequestsCount: UInt8(1), failRequestsCount: domainRequestsCount - 1),
-                (domain: "site2.com", successRequestsCount: UInt8(1), failRequestsCount: domainRequestsCount - 1),
-                (domain: "sub.domain.site.com", successRequestsCount: UInt8(2), failRequestsCount: 0),
-                (domain: "site-another.com", successRequestsCount: UInt8(1), failRequestsCount: domainRequestsCount - 1),
-                (domain: "site3.com", successRequestsCount: UInt8(2), failRequestsCount: 0),
+                (domain: "site.com", successRequestsCount: UInt8(1), failRequestsCount: domainRequestsCount - 1, successTest: true),
+                (domain: "site2.com", successRequestsCount: UInt8(1), failRequestsCount: domainRequestsCount - 1, successTest: true),
+                (domain: "sub.domain.site.com", successRequestsCount: UInt8(2), failRequestsCount: 0, successTest: true),
+                (domain: "site-another.com", successRequestsCount: UInt8(1), failRequestsCount: domainRequestsCount - 1, successTest: true),
+                (domain: "site3.com", successRequestsCount: UInt8(2), failRequestsCount: 0, successTest: true),
             ])
             StrategyTestResultView(strategyCmdArgs: ["-cmd3", "-arg3", "-name3", "-dat3"], totalDomainRequestsCount: totalDomainRequestsCount, domainsSuccessTestResults: [
-                (domain: "site.com", successRequestsCount: UInt8(2), failRequestsCount: 0),
-                (domain: "site2.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount),
-                (domain: "sub.domain.site.com", successRequestsCount: UInt8(2), failRequestsCount: 0),
-                (domain: "site-another.com", successRequestsCount: UInt8(1), failRequestsCount: domainRequestsCount - 1),
-                (domain: "site3.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount),
+                (domain: "site.com", successRequestsCount: UInt8(2), failRequestsCount: 0, successTest: true),
+                (domain: "site2.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount, successTest: false),
+                (domain: "sub.domain.site.com", successRequestsCount: UInt8(2), failRequestsCount: 0, successTest: true),
+                (domain: "site-another.com", successRequestsCount: UInt8(1), failRequestsCount: domainRequestsCount - 1, successTest: true),
+                (domain: "site3.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount, successTest: false),
             ])
             StrategyTestResultView(strategyCmdArgs: ["-cmd4", "-arg4", "-name4", "-dat4"], totalDomainRequestsCount: totalDomainRequestsCount, domainsSuccessTestResults: [
-                (domain: "site.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount),
-                (domain: "site2.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount),
-                (domain: "sub.domain.site.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount),
-                (domain: "site-another.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount),
-                (domain: "site3.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount),
+                (domain: "site.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount, successTest: false),
+                (domain: "site2.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount, successTest: false),
+                (domain: "sub.domain.site.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount, successTest: false),
+                (domain: "site-another.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount, successTest: false),
+                (domain: "site3.com", successRequestsCount: UInt8(0), failRequestsCount: domainRequestsCount, successTest: false),
             ])
         }
     }

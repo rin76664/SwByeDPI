@@ -69,6 +69,11 @@ struct ByeByeDPIApp: App {
                 VideoTestDomains.domainsList,
                 WhatsappTestDomains.domainsList,
                 YouTubeTestDomains.domainsList,
+                FacebookShortTestDomains.domainsList,
+                InstagramShortTestDomains.domainsList,
+                TwitterShortTestDomains.domainsList,
+                VideoShortTestDomains.domainsList,
+                WhatsappShortTestDomains.domainsList,
                 
                 //Filter hosts (black lists for Anti-DPI)
                 AlfaBankDPIBypassSLD.domainsList,

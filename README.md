@@ -183,7 +183,7 @@ For advanced use, you can refer to the [comprehensive instructions from the ByeB
 There are two possible app build options:
 
 - **VPN client (ByeByeDPI)** ByeDPI -> Tun2SocksKit -> NEVPN + DNS - **requires a paid developer license**: an individual account is sufficient for development, debugging, and uploading to TestFlight; a legal entity or sole proprietorship account is required for release in the App Store [according to Apple Developer Guidelines 5.4](https://developer.apple.com/app-store/review/guidelines/#legal). **Note**: The app is not a general VPN client, as ByeDPI runs locally on the device. The VPN trick is needed to enable ByeDPI functionality in the background (when the app is minimized or not running) and to process ByeDPI internet traffic from all apps on the phone and devices on the local network (you must grant the app permission to access the local network). Support for DoH/DoT in the app allows you to bypass geoblocks imposed by the services themselves.
-- **ByeDPI SOCKS proxy server (ByeDPI)** - for running on your own devices, **does not require a paid developer license**. This build is ideal for testing app functionality on endpoints: you can test strategies and create an optimal composite using an analyzer. The caveat here is that ByeDPI will only work while the app is open (foreground).
+- **ByeDPI SOCKS proxy server (ByeDPI)** - for running on your own devices, **does not require a paid developer license**. This build is ideal for debugging and testing app functionality on endpoints: you can test strategies and create an optimal composite using an analyzer. The caveat here is that ByeDPI will only work while the app is open (foreground).
 
 1. Clone the current repository:
 

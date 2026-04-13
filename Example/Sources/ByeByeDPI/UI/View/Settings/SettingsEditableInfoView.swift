@@ -52,6 +52,7 @@ struct SettingsEditableInfoView: View {
                         .font(.body).fontWeight(.regular)
                         .multilineTextAlignment(.leading)
                         .foregroundColor(Color(R.color.grPrimary))
+                        .lineLimit(4)
                 })
             }
             .frame(maxWidth: .infinity, alignment: .leading)

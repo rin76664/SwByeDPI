@@ -29,6 +29,8 @@
 "settingsByeDPIStrategyTestOptionDesc" = "ByeDPI multiple CMD args testing";
 "settingsByeDPITestAnalyzerOption" = "Strategy analyzer";
 "settingsByeDPITestAnalyzerOptionDesc" = "ByeDPI optimal strategy synthesis based on testing results";
+"settingsByeDPIDebugOption" = "Strategy debug";
+"settingsByeDPIDebugOptionDesc" = "ByeDPI strategy CMD args testing with editting support";
 "settingsDomainsListOption" = "Domains list";
 "settingsDomainsListOptionDesc" = "Create, update or delete domains for testing and filtering byeDPI strategies";
 "settingsStrategiesListOption" = "Strategies list";
@@ -98,6 +100,11 @@
 "byeDPITestAnalyzerApply" = "Apply";
 "byeDPITestAnalyzerCopy" = "Copy";
 "byeDPITestAnalyzerNoTestResults" = "No strategy test results. Do the testing first";
+
+"byeDPIDebugNavTitle" = "Strategy debug";
+"byeDPIDebugStart" = "Start check";
+"byeDPITestStop" = "Stop";
+"byeDPIDebugDetails" = "Check results";
 
 "domainsListNavTitle" = "Domains list";
 "domainsListCreate" = "Create new list";

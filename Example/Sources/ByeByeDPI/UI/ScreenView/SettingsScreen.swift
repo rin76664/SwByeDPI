@@ -142,6 +142,11 @@ struct SettingsScreen: View {
                     } label: {
                         SettingsStaticInfoView(title: R.string.localizable.settingsByeDPITestAnalyzerOption(), text: R.string.localizable.settingsByeDPITestAnalyzerOptionDesc(), leadingIcon: Image(R.image.icTool))
                     }
+                    NavigationLink {
+                        ByeDPIStrategyDebuggerScreen(initTestConfig: properties.byeDPITestConfig, initStrategyCmdArgs: properties.byeDPILaunchConfig.cmdArgs)
+                    } label: {
+                        SettingsStaticInfoView(title: R.string.localizable.settingsByeDPIDebugOption(), text: R.string.localizable.settingsByeDPIDebugOptionDesc(), leadingIcon: Image(R.image.icBracketsCheck))
+                    }
                 }
                 .padding(EdgeInsets(top: .zero, leading: .zero, bottom: 8.0, trailing: .zero))
                 VStack(alignment: .leading) {

@@ -67,7 +67,7 @@ struct ByeDPIStrategyTesterScreen: View {
                     ForEach(0..<testManager.lastCheckResults.count, id: \.self) { index in
                         let strategyTestResult = testManager.lastCheckResults[index]
                         StrategyTestResultView(strategyCmdArgs: strategyTestResult.strategy.cmdArgs, totalDomainRequestsCount: _totalDomainRequestsCount, domainsSuccessTestResults: strategyTestResult.sortedDomainsTestsResult.map({ domainTestResult in
-                            return (domain: domainTestResult.domain, successRequestsCount: domainTestResult.successRequestsCount, failRequestsCount: domainTestResult.failedRequestsCount)
+                            return (domain: domainTestResult.domain, successRequestsCount: domainTestResult.successRequestsCount, failRequestsCount: domainTestResult.failedRequestsCount, successTest: domainTestResult.successTest)
                         }))
                         .id(strategyTestResult.strategy.id)
                     }
@@ -112,7 +112,10 @@ struct ByeDPIStrategyTesterScreen: View {
             #endif
             ToolbarItem(placement: .topBarTrailing) {
                 NavigationLink {
-                    ByeDPIStrategyTesterSettingsScreen()
+                    ByeDPIStrategyTesterSettingsScreen(testConfig: properties.byeDPITestConfig, onUpdate: { testConfig in
+                        properties.byeDPITestConfig = testConfig
+                        properties.save()
+                    }, testSingleStrategyMode: false)
                 } label: {
                     Image(R.image.icSettings)
                         .resizable()
