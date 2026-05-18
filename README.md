@@ -22,7 +22,7 @@
 
 Repository represents the Swift framework, which is [native C byedpi](https://github.com/hufrea/byedpi) wrapper
 
-Thanks to [romanvht](https://github.com/romanvht) for his [byedpi-based Android app fork](https://github.com/romanvht/ByeByeDPI). It inspired the creation of this project [along with an iOS app running on this module](./Example/ByeByeDPI)
+Thanks to [romanvht](https://github.com/romanvht) for his [byedpi-based Android app fork](https://github.com/romanvht/ByeByeDPI). It inspired the creation of this project [along with an iOS app running on this module](./Example/Sources/ByeByeDPI)
 
 ## Content
 
@@ -157,7 +157,7 @@ Generation is performed manually using the [code generator script](./CodeGen/gen
 
 ## Example app
 
-The [Example app](./Example/ByeByeDPI) is an iOS app (iOS 14+, SwiftUI). The project can be built for other platforms (Experimental support for tvOS 17.0+ and macOS 11.0+).
+The [Example app](./Example/Sources/ByeByeDPI) is an iOS app (iOS 14+, SwiftUI). The project can be built for other platforms (Experimental support for tvOS 17.0+ and macOS 11.0+).
 
 The app runs ByeDPI locally and can redirect traffic from other apps and devices on the local network through it.
 
@@ -184,6 +184,7 @@ There are two possible app build options:
 
 - **VPN client (ByeByeDPI)** ByeDPI -> Tun2SocksKit -> NEVPN + DNS - **requires a paid developer license**: an individual account is sufficient for development, debugging, and uploading to TestFlight; a legal entity or sole proprietorship account is required for release in the App Store [according to Apple Developer Guidelines 5.4](https://developer.apple.com/app-store/review/guidelines/#legal). **Note**: The app is not a general VPN client, as ByeDPI runs locally on the device. The VPN trick is needed to enable ByeDPI functionality in the background (when the app is minimized or not running) and to process ByeDPI internet traffic from all apps on the phone and devices on the local network (you must grant the app permission to access the local network). Support for DoH/DoT in the app allows you to bypass geoblocks imposed by the services themselves.
 - **ByeDPI SOCKS proxy server (ByeDPI)** - for running on your own devices, **does not require a paid developer license**. This build is ideal for debugging and testing app functionality on endpoints: you can test strategies and create an optimal composite using an analyzer. The caveat here is that ByeDPI will only work while the app is open (foreground).
+- **ByeDPI SOCKS proxy server with background support (ByeDPIBg)** - Same as the above option, but with background support when the app is minimized via endlessly playing silent audio that doesn't interrupt regular audio (mixWithOthers)
 
 1. Clone the current repository:
 

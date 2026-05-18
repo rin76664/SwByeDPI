@@ -126,7 +126,7 @@ struct StrategyTestResultView: View {
                 VStack(alignment: .leading, spacing: 4.0) {
                     ForEach(_domainsSuccessTestResults) { domainTestResult in
                         VStack(alignment: .leading, spacing: .zero) {
-                            DomainTestResultView(domain: domainTestResult.domain, successRequestsCount: UInt8(domainTestResult.successRequestsCount), totalRequestsCount: UInt8(domainTestResult.totalRequestsCount))
+                            DomainTestResultView(domain: domainTestResult.domain, successRequestsCount: UInt8(domainTestResult.successRequestsCount), totalRequestsCount: UInt8(domainTestResult.totalRequestsCount), successTest: domainTestResult.successTest)
                             Divider()
                         }
                         .id(domainTestResult.domain)

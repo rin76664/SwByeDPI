@@ -14,6 +14,10 @@
 		8B3AF5822F6DCEE80085E8BC /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 8B3AF5812F6DCEE80085E8BC /* RswiftLibrary */; };
 		8B3AF5842F6DCEEF0085E8BC /* TextFieldAlert in Frameworks */ = {isa = PBXBuildFile; platformFilters = (ios, maccatalyst, tvos, ); productRef = 8B3AF5832F6DCEEF0085E8BC /* TextFieldAlert */; };
 		8B3B63EB2F597F94005BA55B /* TextFieldAlert in Frameworks */ = {isa = PBXBuildFile; platformFilters = (ios, maccatalyst, tvos, ); productRef = 8B3B63EA2F597F94005BA55B /* TextFieldAlert */; };
+		8B5F84902F9F53F5001D2867 /* SwByeDPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD891882F3A1A750020D925 /* SwByeDPI.framework */; };
+		8B5F84912F9F53F5001D2867 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 8B5F848A2F9F53F5001D2867 /* RswiftLibrary */; };
+		8B5F84922F9F53F5001D2867 /* TextFieldAlert in Frameworks */ = {isa = PBXBuildFile; platformFilters = (ios, maccatalyst, tvos, ); productRef = 8B5F848C2F9F53F5001D2867 /* TextFieldAlert */; };
+		8B5F84952F9F53F5001D2867 /* SwByeDPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD891882F3A1A750020D925 /* SwByeDPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8B62D5C22F87FB3300DF6F8C /* libByeDPICLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B62D5A42F87ECAB00DF6F8C /* libByeDPICLib.a */; };
 		8B62D5C52F87FCF600DF6F8C /* libByeDPICLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B62D5A42F87ECAB00DF6F8C /* libByeDPICLib.a */; };
 		8B62D5CB2F880A0A00DF6F8C /* libByeDPIKitLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B62D5BB2F87FA9500DF6F8C /* libByeDPIKitLib.a */; };
@@ -38,6 +42,13 @@
 			remoteInfo = ByeByeDPITun;
 		};
 		8B3AF5712F6DCDF50085E8BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BD8917F2F3A1A750020D925 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BD891872F3A1A750020D925;
+			remoteInfo = SwByeDPI;
+		};
+		8B5F84882F9F53F5001D2867 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8BD8917F2F3A1A750020D925 /* Project object */;
 			proxyType = 1;
@@ -114,6 +125,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8B5F84942F9F53F5001D2867 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8B5F84952F9F53F5001D2867 /* SwByeDPI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8B62D5A22F87ECAB00DF6F8C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,6 +197,7 @@
 		8B46A3052F69D77D00B70C6E /* Package@swift-5.3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package@swift-5.3.swift"; sourceTree = "<group>"; };
 		8B46A3062F69D77D00B70C6E /* Package@swift-5.9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package@swift-5.9.swift"; sourceTree = "<group>"; };
 		8B46A3072F69D77D00B70C6E /* Package@swift-5.10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package@swift-5.10.swift"; sourceTree = "<group>"; };
+		8B5F84992F9F53F5001D2867 /* ByeDPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ByeDPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B62D5A42F87ECAB00DF6F8C /* libByeDPICLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libByeDPICLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B62D5BB2F87FA9500DF6F8C /* libByeDPIKitLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libByeDPIKitLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B707C052F7D7E9800074C5A /* update_byedpi.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = update_byedpi.sh; sourceTree = "<group>"; };
@@ -207,64 +230,64 @@
 				Sources/ByeByeDPI/Assets.xcassets,
 				Sources/ByeByeDPI/ByeByeDPIApp.swift,
 				Sources/ByeByeDPI/Colors.xcassets,
-				Sources/ByeByeDPI/Constants.swift,
-				Sources/ByeByeDPI/Controller/ActivityVC.swift,
-				Sources/ByeByeDPI/Controller/ByeDPIManager.swift,
-				Sources/ByeByeDPI/Controller/DomainsManager.swift,
-				Sources/ByeByeDPI/Controller/GuardActivityVC.swift,
-				Sources/ByeByeDPI/Controller/LNWPermissionManager.swift,
 				Sources/ByeByeDPI/Controller/NEObservablleManager.swift,
-				Sources/ByeByeDPI/Controller/StrategiesManager.swift,
-				Sources/ByeByeDPI/Controller/StrategyDebugManager.swift,
-				Sources/ByeByeDPI/Controller/TestManager.swift,
-				"Sources/ByeByeDPI/Extension/CFNotificationName+VPN.swift",
-				"Sources/ByeByeDPI/Extension/NotificationName+VPN.swift",
-				"Sources/ByeByeDPI/Extension/NSObject+ClassName.swift",
-				"Sources/ByeByeDPI/Extension/ProcessInfo+PreviewMode.swift",
-				Sources/ByeByeDPI/Extension/Published.swift,
-				"Sources/ByeByeDPI/Extension/ScrollView+OnScroll.swift",
-				"Sources/ByeByeDPI/Extension/UIApplication+EndEdit.swift",
-				"Sources/ByeByeDPI/Extension/URL+QueryDictionary.swift",
 				Sources/ByeByeDPI/Icons.xcassets,
 				Sources/ByeByeDPI/LaunchScreen.storyboard,
 				Sources/ByeByeDPI/LaunchScreenTvOS.storyboard,
-				Sources/ByeByeDPI/Model/AppProperties.swift,
-				Sources/ByeByeDPI/Model/BitBool8.swift,
-				Sources/ByeByeDPI/Model/LNWAuthorizationStatus.swift,
-				Sources/ByeByeDPI/Model/UserDefaultsAppKeys.swift,
-				Sources/ByeByeDPI/Model/UserDefaultsAppProperties.swift,
 				Sources/ByeByeDPI/PreviewContent/PreviewAssets.xcassets,
 				Sources/ByeByeDPI/PrivacyInfo.xcprivacy,
 				Sources/ByeByeDPI/Shortcut/StartByeDPIVPNIntent.swift,
 				Sources/ByeByeDPI/Shortcut/StopByeDPIVPNIntent.swift,
 				Sources/ByeByeDPI/Shortcut/ToggleByeDPIVPNIntent.swift,
-				Sources/ByeByeDPI/UI/ScreenView/Analyzer/ByeDPITestResultsAnalyzerScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/ByeDPICmdEditorScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/DomainListCtorScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/DomainListsScreen.swift,
 				Sources/ByeByeDPI/UI/ScreenView/HomeScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/ListRawDataScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/Picker/ListPickerScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/SettingsScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/StrategyListCtorScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/StrategyListsScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/Tester/ByeDPIStrategyDebuggerScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/Tester/ByeDPIStrategyTesterScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/Tester/ByeDPIStrategyTesterSettingsScreen.swift,
-				Sources/ByeByeDPI/UI/View/DomainListView.swift,
-				Sources/ByeByeDPI/UI/View/Picker/ListPickItemView.swift,
-				Sources/ByeByeDPI/UI/View/RecentByeDPICmdView.swift,
-				Sources/ByeByeDPI/UI/View/Settings/SettingsButtonView.swift,
-				Sources/ByeByeDPI/UI/View/Settings/SettingsEditableInfoView.swift,
-				Sources/ByeByeDPI/UI/View/Settings/SettingsStaticInfoView.swift,
-				Sources/ByeByeDPI/UI/View/StrategyListView.swift,
-				Sources/ByeByeDPI/UI/View/Tester/DomainTestResultView.swift,
-				Sources/ByeByeDPI/UI/View/Tester/StrategyTestResultView.swift,
-				Sources/ByeByeDPI/UI/ViewModifier/TextFieldAlertVModifier.swift,
-				Sources/ByeByeDPI/Util/NEUtil.swift,
-				Sources/ByeByeDPI/Util/PlistUtil.swift,
-				Sources/ByeByeDPI/VModel/DomainListVModel.swift,
-				Sources/ByeByeDPI/VModel/StrategyListVModel.swift,
+				Sources/ByeByeDPI/UniCore/Constants.swift,
+				Sources/ByeByeDPI/UniCore/Controller/ActivityVC.swift,
+				Sources/ByeByeDPI/UniCore/Controller/ByeDPIManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/DomainsManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/GuardActivityVC.swift,
+				Sources/ByeByeDPI/UniCore/Controller/LNWPermissionManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/StrategiesManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/StrategyDebugManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/TestManager.swift,
+				"Sources/ByeByeDPI/UniCore/Extension/CFNotificationName+VPN.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/NotificationName+VPN.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/NSObject+ClassName.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/ProcessInfo+PreviewMode.swift",
+				Sources/ByeByeDPI/UniCore/Extension/Published.swift,
+				"Sources/ByeByeDPI/UniCore/Extension/ScrollView+OnScroll.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/UIApplication+EndEdit.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/URL+QueryDictionary.swift",
+				Sources/ByeByeDPI/UniCore/Model/AppProperties.swift,
+				Sources/ByeByeDPI/UniCore/Model/BitBool8.swift,
+				Sources/ByeByeDPI/UniCore/Model/LNWAuthorizationStatus.swift,
+				Sources/ByeByeDPI/UniCore/Model/UserDefaultsAppKeys.swift,
+				Sources/ByeByeDPI/UniCore/Model/UserDefaultsAppProperties.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Analyzer/ByeDPITestResultsAnalyzerScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/ByeDPICmdEditorScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/DomainListCtorScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/DomainListsScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/ListRawDataScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Picker/ListPickerScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/SettingsScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/StrategyListCtorScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/StrategyListsScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Tester/ByeDPIStrategyDebuggerScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Tester/ByeDPIStrategyTesterScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Tester/ByeDPIStrategyTesterSettingsScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/DomainListView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Picker/ListPickItemView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/RecentByeDPICmdView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Settings/SettingsButtonView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Settings/SettingsEditableInfoView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Settings/SettingsStaticInfoView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/StrategyListView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Tester/DomainTestResultView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Tester/StrategyTestResultView.swift,
+				Sources/ByeByeDPI/UniCore/UI/ViewModifier/TextFieldAlertVModifier.swift,
+				Sources/ByeByeDPI/UniCore/Util/NEUtil.swift,
+				Sources/ByeByeDPI/UniCore/Util/PlistUtil.swift,
+				Sources/ByeByeDPI/UniCore/VModel/DomainListVModel.swift,
+				Sources/ByeByeDPI/UniCore/VModel/StrategyListVModel.swift,
 			);
 			platformFiltersByRelativePath = {
 				Sources/ByeByeDPI/LaunchScreen.storyboard = (
@@ -283,62 +306,62 @@
 				/Localized/Sources/ByeByeDPI/InfoPlist.strings,
 				/Localized/Sources/ByeByeDPI/Localizable.strings,
 				Sources/ByeByeDPI/Assets.xcassets,
-				Sources/ByeByeDPI/ByeByeDPIAppPrx.swift,
 				Sources/ByeByeDPI/Colors.xcassets,
-				Sources/ByeByeDPI/Constants.swift,
-				Sources/ByeByeDPI/Controller/ActivityVC.swift,
-				Sources/ByeByeDPI/Controller/ByeDPIManager.swift,
-				Sources/ByeByeDPI/Controller/DomainsManager.swift,
-				Sources/ByeByeDPI/Controller/GuardActivityVC.swift,
-				Sources/ByeByeDPI/Controller/LNWPermissionManager.swift,
-				Sources/ByeByeDPI/Controller/StrategiesManager.swift,
-				Sources/ByeByeDPI/Controller/StrategyDebugManager.swift,
-				Sources/ByeByeDPI/Controller/TestManager.swift,
-				"Sources/ByeByeDPI/Extension/CFNotificationName+VPN.swift",
-				"Sources/ByeByeDPI/Extension/NotificationName+VPN.swift",
-				"Sources/ByeByeDPI/Extension/NSObject+ClassName.swift",
-				"Sources/ByeByeDPI/Extension/ProcessInfo+PreviewMode.swift",
-				Sources/ByeByeDPI/Extension/Published.swift,
-				"Sources/ByeByeDPI/Extension/ScrollView+OnScroll.swift",
-				"Sources/ByeByeDPI/Extension/UIApplication+EndEdit.swift",
-				"Sources/ByeByeDPI/Extension/URL+QueryDictionary.swift",
 				Sources/ByeByeDPI/Icons.xcassets,
 				Sources/ByeByeDPI/LaunchScreen.storyboard,
 				Sources/ByeByeDPI/LaunchScreenTvOS.storyboard,
-				Sources/ByeByeDPI/Model/AppProperties.swift,
-				Sources/ByeByeDPI/Model/BitBool8.swift,
-				Sources/ByeByeDPI/Model/LNWAuthorizationStatus.swift,
-				Sources/ByeByeDPI/Model/UserDefaultsAppKeys.swift,
-				Sources/ByeByeDPI/Model/UserDefaultsAppProperties.swift,
 				Sources/ByeByeDPI/PreviewContent/PreviewAssets.xcassets,
 				Sources/ByeByeDPI/PrivacyInfo.xcprivacy,
-				Sources/ByeByeDPI/UI/ScreenView/Analyzer/ByeDPITestResultsAnalyzerScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/ByeDPICmdEditorScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/DomainListCtorScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/DomainListsScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/HomeScreenPrx.swift,
-				Sources/ByeByeDPI/UI/ScreenView/ListRawDataScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/Picker/ListPickerScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/SettingsScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/StrategyListCtorScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/StrategyListsScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/Tester/ByeDPIStrategyDebuggerScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/Tester/ByeDPIStrategyTesterScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/Tester/ByeDPIStrategyTesterSettingsScreen.swift,
-				Sources/ByeByeDPI/UI/View/DomainListView.swift,
-				Sources/ByeByeDPI/UI/View/Picker/ListPickItemView.swift,
-				Sources/ByeByeDPI/UI/View/RecentByeDPICmdView.swift,
-				Sources/ByeByeDPI/UI/View/Settings/SettingsButtonView.swift,
-				Sources/ByeByeDPI/UI/View/Settings/SettingsEditableInfoView.swift,
-				Sources/ByeByeDPI/UI/View/Settings/SettingsStaticInfoView.swift,
-				Sources/ByeByeDPI/UI/View/StrategyListView.swift,
-				Sources/ByeByeDPI/UI/View/Tester/DomainTestResultView.swift,
-				Sources/ByeByeDPI/UI/View/Tester/StrategyTestResultView.swift,
-				Sources/ByeByeDPI/UI/ViewModifier/TextFieldAlertVModifier.swift,
-				Sources/ByeByeDPI/Util/NEUtil.swift,
-				Sources/ByeByeDPI/Util/PlistUtil.swift,
-				Sources/ByeByeDPI/VModel/DomainListVModel.swift,
-				Sources/ByeByeDPI/VModel/StrategyListVModel.swift,
+				Sources/ByeByeDPI/UniCore/Constants.swift,
+				Sources/ByeByeDPI/UniCore/Controller/ActivityVC.swift,
+				Sources/ByeByeDPI/UniCore/Controller/ByeDPIManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/DomainsManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/GuardActivityVC.swift,
+				Sources/ByeByeDPI/UniCore/Controller/LNWPermissionManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/StrategiesManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/StrategyDebugManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/TestManager.swift,
+				"Sources/ByeByeDPI/UniCore/Extension/CFNotificationName+VPN.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/NotificationName+VPN.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/NSObject+ClassName.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/ProcessInfo+PreviewMode.swift",
+				Sources/ByeByeDPI/UniCore/Extension/Published.swift,
+				"Sources/ByeByeDPI/UniCore/Extension/ScrollView+OnScroll.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/UIApplication+EndEdit.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/URL+QueryDictionary.swift",
+				Sources/ByeByeDPI/UniCore/Model/AppProperties.swift,
+				Sources/ByeByeDPI/UniCore/Model/BitBool8.swift,
+				Sources/ByeByeDPI/UniCore/Model/LNWAuthorizationStatus.swift,
+				Sources/ByeByeDPI/UniCore/Model/UserDefaultsAppKeys.swift,
+				Sources/ByeByeDPI/UniCore/Model/UserDefaultsAppProperties.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Analyzer/ByeDPITestResultsAnalyzerScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/ByeDPICmdEditorScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/DomainListCtorScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/DomainListsScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/ListRawDataScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Picker/ListPickerScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/SettingsScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/StrategyListCtorScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/StrategyListsScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Tester/ByeDPIStrategyDebuggerScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Tester/ByeDPIStrategyTesterScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Tester/ByeDPIStrategyTesterSettingsScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/DomainListView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Picker/ListPickItemView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/RecentByeDPICmdView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Settings/SettingsButtonView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Settings/SettingsEditableInfoView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Settings/SettingsStaticInfoView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/StrategyListView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Tester/DomainTestResultView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Tester/StrategyTestResultView.swift,
+				Sources/ByeByeDPI/UniCore/UI/ViewModifier/TextFieldAlertVModifier.swift,
+				Sources/ByeByeDPI/UniCore/Util/NEUtil.swift,
+				Sources/ByeByeDPI/UniCore/Util/PlistUtil.swift,
+				Sources/ByeByeDPI/UniCore/VModel/DomainListVModel.swift,
+				Sources/ByeByeDPI/UniCore/VModel/StrategyListVModel.swift,
+				Sources/ByeDPI/ByeByeDPIAppPrx.swift,
+				Sources/ByeDPI/UI/ScreenView/HomeScreenPrx.swift,
 			);
 			platformFiltersByRelativePath = {
 				Sources/ByeByeDPI/LaunchScreen.storyboard = (
@@ -350,6 +373,85 @@
 				);
 			};
 			target = 8B3AF55D2F6DCCCF0085E8BC /* ByeDPI */;
+		};
+		8B5F84A02F9F5564001D2867 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				/Localized/Sources/ByeByeDPI/InfoPlist.strings,
+				/Localized/Sources/ByeByeDPI/Localizable.strings,
+				/Localized/Sources/ByeDPIBg/AppIntent.strings,
+				Sources/ByeByeDPI/Assets.xcassets,
+				Sources/ByeByeDPI/Colors.xcassets,
+				Sources/ByeByeDPI/Icons.xcassets,
+				Sources/ByeByeDPI/LaunchScreen.storyboard,
+				Sources/ByeByeDPI/LaunchScreenTvOS.storyboard,
+				Sources/ByeByeDPI/PreviewContent/PreviewAssets.xcassets,
+				Sources/ByeByeDPI/PrivacyInfo.xcprivacy,
+				Sources/ByeByeDPI/UniCore/Constants.swift,
+				Sources/ByeByeDPI/UniCore/Controller/ActivityVC.swift,
+				Sources/ByeByeDPI/UniCore/Controller/ByeDPIManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/DomainsManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/GuardActivityVC.swift,
+				Sources/ByeByeDPI/UniCore/Controller/LNWPermissionManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/StrategiesManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/StrategyDebugManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/TestManager.swift,
+				"Sources/ByeByeDPI/UniCore/Extension/CFNotificationName+VPN.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/NotificationName+VPN.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/NSObject+ClassName.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/ProcessInfo+PreviewMode.swift",
+				Sources/ByeByeDPI/UniCore/Extension/Published.swift,
+				"Sources/ByeByeDPI/UniCore/Extension/ScrollView+OnScroll.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/UIApplication+EndEdit.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/URL+QueryDictionary.swift",
+				Sources/ByeByeDPI/UniCore/Model/AppProperties.swift,
+				Sources/ByeByeDPI/UniCore/Model/BitBool8.swift,
+				Sources/ByeByeDPI/UniCore/Model/LNWAuthorizationStatus.swift,
+				Sources/ByeByeDPI/UniCore/Model/UserDefaultsAppKeys.swift,
+				Sources/ByeByeDPI/UniCore/Model/UserDefaultsAppProperties.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Analyzer/ByeDPITestResultsAnalyzerScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/ByeDPICmdEditorScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/DomainListCtorScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/DomainListsScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/ListRawDataScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Picker/ListPickerScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/SettingsScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/StrategyListCtorScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/StrategyListsScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Tester/ByeDPIStrategyDebuggerScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Tester/ByeDPIStrategyTesterScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Tester/ByeDPIStrategyTesterSettingsScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/DomainListView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Picker/ListPickItemView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/RecentByeDPICmdView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Settings/SettingsButtonView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Settings/SettingsEditableInfoView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Settings/SettingsStaticInfoView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/StrategyListView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Tester/DomainTestResultView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Tester/StrategyTestResultView.swift,
+				Sources/ByeByeDPI/UniCore/UI/ViewModifier/TextFieldAlertVModifier.swift,
+				Sources/ByeByeDPI/UniCore/Util/NEUtil.swift,
+				Sources/ByeByeDPI/UniCore/Util/PlistUtil.swift,
+				Sources/ByeByeDPI/UniCore/VModel/DomainListVModel.swift,
+				Sources/ByeByeDPI/UniCore/VModel/StrategyListVModel.swift,
+				Sources/ByeDPI/ByeByeDPIAppPrx.swift,
+				Sources/ByeDPIBg/Controller/PlaybackController.swift,
+				Sources/ByeDPIBg/Shortcut/StartByeDPIProxyIntentBg.swift,
+				Sources/ByeDPIBg/Shortcut/StartByeDPIProxyIntentFg.swift,
+				Sources/ByeDPIBg/Shortcut/StopByeDPIProxyIntent.swift,
+				Sources/ByeDPIBg/UI/ScreenView/HomeScreenBgPrx.swift,
+			);
+			platformFiltersByRelativePath = {
+				Sources/ByeByeDPI/LaunchScreen.storyboard = (
+					ios,
+					maccatalyst,
+				);
+				Sources/ByeByeDPI/LaunchScreenTvOS.storyboard = (
+					tvos,
+				);
+			};
+			target = 8B5F84862F9F53F5001D2867 /* ByeDPIBg */;
 		};
 		8B62D5AF2F87F90000DF6F8C /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
@@ -420,60 +522,60 @@
 				/Localized/Sources/ByeByeDPI/InfoPlist.strings,
 				/Localized/Sources/ByeByeDPI/Localizable.strings,
 				Sources/ByeByeDPI/Assets.xcassets,
-				Sources/ByeByeDPI/ByeByeDPIAppPrx.swift,
 				Sources/ByeByeDPI/Colors.xcassets,
-				Sources/ByeByeDPI/Constants.swift,
-				Sources/ByeByeDPI/Controller/ActivityVC.swift,
-				Sources/ByeByeDPI/Controller/ByeDPIManager.swift,
-				Sources/ByeByeDPI/Controller/DomainsManager.swift,
-				Sources/ByeByeDPI/Controller/GuardActivityVC.swift,
-				Sources/ByeByeDPI/Controller/LNWPermissionManager.swift,
-				Sources/ByeByeDPI/Controller/StrategiesManager.swift,
-				Sources/ByeByeDPI/Controller/StrategyDebugManager.swift,
-				Sources/ByeByeDPI/Controller/TestManager.swift,
-				"Sources/ByeByeDPI/Extension/CFNotificationName+VPN.swift",
-				"Sources/ByeByeDPI/Extension/NotificationName+VPN.swift",
-				"Sources/ByeByeDPI/Extension/NSObject+ClassName.swift",
-				"Sources/ByeByeDPI/Extension/ProcessInfo+PreviewMode.swift",
-				Sources/ByeByeDPI/Extension/Published.swift,
-				"Sources/ByeByeDPI/Extension/ScrollView+OnScroll.swift",
-				"Sources/ByeByeDPI/Extension/UIApplication+EndEdit.swift",
-				"Sources/ByeByeDPI/Extension/URL+QueryDictionary.swift",
 				Sources/ByeByeDPI/Icons.xcassets,
-				Sources/ByeByeDPI/Model/AppProperties.swift,
-				Sources/ByeByeDPI/Model/BitBool8.swift,
-				Sources/ByeByeDPI/Model/LNWAuthorizationStatus.swift,
-				Sources/ByeByeDPI/Model/UserDefaultsAppKeys.swift,
-				Sources/ByeByeDPI/Model/UserDefaultsAppProperties.swift,
 				Sources/ByeByeDPI/PreviewContent/PreviewAssets.xcassets,
 				Sources/ByeByeDPI/PrivacyInfo.xcprivacy,
-				Sources/ByeByeDPI/UI/ScreenView/Analyzer/ByeDPITestResultsAnalyzerScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/ByeDPICmdEditorScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/DomainListCtorScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/DomainListsScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/HomeScreenPrx.swift,
-				Sources/ByeByeDPI/UI/ScreenView/ListRawDataScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/Picker/ListPickerScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/SettingsScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/StrategyListCtorScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/StrategyListsScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/Tester/ByeDPIStrategyDebuggerScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/Tester/ByeDPIStrategyTesterScreen.swift,
-				Sources/ByeByeDPI/UI/ScreenView/Tester/ByeDPIStrategyTesterSettingsScreen.swift,
-				Sources/ByeByeDPI/UI/View/DomainListView.swift,
-				Sources/ByeByeDPI/UI/View/Picker/ListPickItemView.swift,
-				Sources/ByeByeDPI/UI/View/RecentByeDPICmdView.swift,
-				Sources/ByeByeDPI/UI/View/Settings/SettingsButtonView.swift,
-				Sources/ByeByeDPI/UI/View/Settings/SettingsEditableInfoView.swift,
-				Sources/ByeByeDPI/UI/View/Settings/SettingsStaticInfoView.swift,
-				Sources/ByeByeDPI/UI/View/StrategyListView.swift,
-				Sources/ByeByeDPI/UI/View/Tester/DomainTestResultView.swift,
-				Sources/ByeByeDPI/UI/View/Tester/StrategyTestResultView.swift,
-				Sources/ByeByeDPI/UI/ViewModifier/TextFieldAlertVModifier.swift,
-				Sources/ByeByeDPI/Util/NEUtil.swift,
-				Sources/ByeByeDPI/Util/PlistUtil.swift,
-				Sources/ByeByeDPI/VModel/DomainListVModel.swift,
-				Sources/ByeByeDPI/VModel/StrategyListVModel.swift,
+				Sources/ByeByeDPI/UniCore/Constants.swift,
+				Sources/ByeByeDPI/UniCore/Controller/ActivityVC.swift,
+				Sources/ByeByeDPI/UniCore/Controller/ByeDPIManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/DomainsManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/GuardActivityVC.swift,
+				Sources/ByeByeDPI/UniCore/Controller/LNWPermissionManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/StrategiesManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/StrategyDebugManager.swift,
+				Sources/ByeByeDPI/UniCore/Controller/TestManager.swift,
+				"Sources/ByeByeDPI/UniCore/Extension/CFNotificationName+VPN.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/NotificationName+VPN.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/NSObject+ClassName.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/ProcessInfo+PreviewMode.swift",
+				Sources/ByeByeDPI/UniCore/Extension/Published.swift,
+				"Sources/ByeByeDPI/UniCore/Extension/ScrollView+OnScroll.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/UIApplication+EndEdit.swift",
+				"Sources/ByeByeDPI/UniCore/Extension/URL+QueryDictionary.swift",
+				Sources/ByeByeDPI/UniCore/Model/AppProperties.swift,
+				Sources/ByeByeDPI/UniCore/Model/BitBool8.swift,
+				Sources/ByeByeDPI/UniCore/Model/LNWAuthorizationStatus.swift,
+				Sources/ByeByeDPI/UniCore/Model/UserDefaultsAppKeys.swift,
+				Sources/ByeByeDPI/UniCore/Model/UserDefaultsAppProperties.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Analyzer/ByeDPITestResultsAnalyzerScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/ByeDPICmdEditorScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/DomainListCtorScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/DomainListsScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/ListRawDataScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Picker/ListPickerScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/SettingsScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/StrategyListCtorScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/StrategyListsScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Tester/ByeDPIStrategyDebuggerScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Tester/ByeDPIStrategyTesterScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/ScreenView/Tester/ByeDPIStrategyTesterSettingsScreen.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/DomainListView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Picker/ListPickItemView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/RecentByeDPICmdView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Settings/SettingsButtonView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Settings/SettingsEditableInfoView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Settings/SettingsStaticInfoView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/StrategyListView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Tester/DomainTestResultView.swift,
+				Sources/ByeByeDPI/UniCore/UI/View/Tester/StrategyTestResultView.swift,
+				Sources/ByeByeDPI/UniCore/UI/ViewModifier/TextFieldAlertVModifier.swift,
+				Sources/ByeByeDPI/UniCore/Util/NEUtil.swift,
+				Sources/ByeByeDPI/UniCore/Util/PlistUtil.swift,
+				Sources/ByeByeDPI/UniCore/VModel/DomainListVModel.swift,
+				Sources/ByeByeDPI/UniCore/VModel/StrategyListVModel.swift,
+				Sources/ByeDPI/ByeByeDPIAppPrx.swift,
+				Sources/ByeDPI/UI/ScreenView/HomeScreenPrx.swift,
 			);
 			target = 8BA5E1BC2F7108D700F47B9C /* ByeDPImacOS */;
 		};
@@ -481,6 +583,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				SwByeDPITests/Controller/SBDTestControllerTests.swift,
+				SwByeDPITests/Generated/StrategiesTest.swift,
 				SwByeDPITests/Model/SBDAndroidConfigTests.swift,
 				SwByeDPITests/Model/SBDConfigTests.swift,
 				SwByeDPITests/Model/SBDDomainListTests.swift,
@@ -507,6 +610,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				ByeDPIKitTests/ByeDPITests.swift,
+				"ByeDPIKitTests/Global+AndroidThreadSleep.swift",
 				ByeDPIKitTests/Util/URLSessionUtil.swift,
 			);
 			target = 8BBA5FAA2F67D3B40092E52A /* ByeDPIKitTests */;
@@ -545,7 +649,7 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		8B2BF7922F4DF95E0016A26B /* Example */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (8B2BF7AF2F4DF9C90016A26B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 8BB420712F73FEF7005C2F2B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 8B3AF5752F6DCEA60085E8BC /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 8BA5E1D82F710B0500F47B9C /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Example; sourceTree = "<group>"; };
+		8B2BF7922F4DF95E0016A26B /* Example */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (8B2BF7AF2F4DF9C90016A26B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 8BB420712F73FEF7005C2F2B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 8B3AF5752F6DCEA60085E8BC /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 8B5F84A02F9F5564001D2867 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 8BA5E1D82F710B0500F47B9C /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Example; sourceTree = "<group>"; };
 		8B3311D52F4A468B00E30583 /* CodeGen */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CodeGen; sourceTree = "<group>"; };
 		8B3311DC2F4A4E2C00E30583 /* Assets */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Assets; sourceTree = "<group>"; };
 		8B3B633E2F595401005BA55B /* Experimental */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Experimental; sourceTree = "<group>"; };
@@ -572,6 +676,16 @@
 				8B3AF57C2F6DCEDE0085E8BC /* SwByeDPI.framework in Frameworks */,
 				8B3AF5822F6DCEE80085E8BC /* RswiftLibrary in Frameworks */,
 				8B3AF5842F6DCEEF0085E8BC /* TextFieldAlert in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B5F848F2F9F53F5001D2867 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B5F84902F9F53F5001D2867 /* SwByeDPI.framework in Frameworks */,
+				8B5F84912F9F53F5001D2867 /* RswiftLibrary in Frameworks */,
+				8B5F84922F9F53F5001D2867 /* TextFieldAlert in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,6 +817,7 @@
 				8BB4205C2F73FEE6005C2F2B /* ByeByeDPITun.appex */,
 				8B62D5A42F87ECAB00DF6F8C /* libByeDPICLib.a */,
 				8B62D5BB2F87FA9500DF6F8C /* libByeDPIKitLib.a */,
+				8B5F84992F9F53F5001D2867 /* ByeDPI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -775,6 +890,30 @@
 			);
 			productName = ByeByeDPIProxy;
 			productReference = 8B3AF55E2F6DCCCF0085E8BC /* ByeDPI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8B5F84862F9F53F5001D2867 /* ByeDPIBg */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B5F84962F9F53F5001D2867 /* Build configuration list for PBXNativeTarget "ByeDPIBg" */;
+			buildPhases = (
+				8B5F848E2F9F53F5001D2867 /* Sources */,
+				8B5F848F2F9F53F5001D2867 /* Frameworks */,
+				8B5F84932F9F53F5001D2867 /* Resources */,
+				8B5F84942F9F53F5001D2867 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B5F84872F9F53F5001D2867 /* PBXTargetDependency */,
+				8B5F84892F9F53F5001D2867 /* PBXTargetDependency */,
+			);
+			name = ByeDPIBg;
+			packageProductDependencies = (
+				8B5F848A2F9F53F5001D2867 /* RswiftLibrary */,
+				8B5F848C2F9F53F5001D2867 /* TextFieldAlert */,
+			);
+			productName = ByeByeDPIProxy;
+			productReference = 8B5F84992F9F53F5001D2867 /* ByeDPI.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8B62D5A32F87ECAB00DF6F8C /* ByeDPICLib */ = {
@@ -1029,6 +1168,7 @@
 				8B2BF7962F4DF9B20016A26B /* ByeByeDPI */,
 				8BB4205B2F73FEE6005C2F2B /* ByeByeDPITun */,
 				8B3AF55D2F6DCCCF0085E8BC /* ByeDPI */,
+				8B5F84862F9F53F5001D2867 /* ByeDPIBg */,
 				8BA5E1BC2F7108D700F47B9C /* ByeDPImacOS */,
 				8B62D5A32F87ECAB00DF6F8C /* ByeDPICLib */,
 				8B8F7A132F4799180015A52A /* ByeDPIC */,
@@ -1050,6 +1190,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8B3AF55C2F6DCCCF0085E8BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B5F84932F9F53F5001D2867 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1116,6 +1263,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8B3AF55A2F6DCCCF0085E8BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B5F848E2F9F53F5001D2867 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1206,6 +1360,15 @@
 			isa = PBXTargetDependency;
 			productRef = 8B52DB1E2F62A683009BE7C3 /* RswiftGenerateInternalResources */;
 		};
+		8B5F84872F9F53F5001D2867 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BD891872F3A1A750020D925 /* SwByeDPI */;
+			targetProxy = 8B5F84882F9F53F5001D2867 /* PBXContainerItemProxy */;
+		};
+		8B5F84892F9F53F5001D2867 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 8B3AF56D2F6DCDEB0085E8BC /* RswiftGenerateInternalResources */;
+		};
 		8B62D5C42F87FB3300DF6F8C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8B62D5A32F87ECAB00DF6F8C /* ByeDPICLib */;
@@ -1261,7 +1424,7 @@
 				CODE_SIGN_ENTITLEMENTS = Example/Sources/ByeByeDPI/ByeByeDPIDebug.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = Example/Sources/ByeByeDPI/PreviewContent/PreviewAssets.xcassets;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 84LBSSY4T8;
@@ -1287,7 +1450,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.9.3;
+				MARKETING_VERSION = 0.9.4;
 				PRODUCT_BUNDLE_IDENTIFIER = org.github.byedpi.app;
 				PRODUCT_MODULE_NAME = ByeByeDPI;
 				PRODUCT_NAME = ByeByeDPI;
@@ -1314,7 +1477,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Example/Sources/ByeByeDPI/ByeByeDPI.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = Example/Sources/ByeByeDPI/PreviewContent/PreviewAssets.xcassets;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
@@ -1339,7 +1502,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.9.3;
+				MARKETING_VERSION = 0.9.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.byedpi.app;
 				PRODUCT_MODULE_NAME = ByeByeDPI;
 				PRODUCT_NAME = ByeByeDPI;
@@ -1364,10 +1527,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Example/Sources/ByeByeDPI/ByeDPI.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Example/Sources/ByeDPI/ByeDPI.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = Example/Sources/ByeByeDPI/PreviewContent/PreviewAssets.xcassets;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				ENABLE_PREVIEWS = YES;
@@ -1392,7 +1555,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.9.3;
+				MARKETING_VERSION = 0.9.4;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.byedpi.app.proxy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = NO;
@@ -1403,7 +1566,7 @@
 				SWIFT_INCLUDE_PATHS = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
-				TVOS_DEPLOYMENT_TARGET = 17.0;
+				TVOS_DEPLOYMENT_TARGET = 16.0;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
@@ -1414,10 +1577,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Example/Sources/ByeByeDPI/ByeDPI.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Example/Sources/ByeDPI/ByeDPI.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = Example/Sources/ByeByeDPI/PreviewContent/PreviewAssets.xcassets;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
@@ -1442,7 +1606,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.9.3;
+				MARKETING_VERSION = 0.9.4;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.byedpi.app.proxy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1454,7 +1618,110 @@
 				SWIFT_INCLUDE_PATHS = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
-				TVOS_DEPLOYMENT_TARGET = 17.0;
+				TVOS_DEPLOYMENT_TARGET = 16.0;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Release;
+		};
+		8B5F84972F9F53F5001D2867 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Example/Sources/ByeDPI/ByeDPI.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_ASSET_PATHS = Example/Sources/ByeByeDPI/PreviewContent/PreviewAssets.xcassets;
+				DEVELOPMENT_TEAM = KTJ3SX58WK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/Sources/ByeDPIC/include";
+				INFOPLIST_FILE = "Example/Sources/ByeDPIBg/BgProxy-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ByeDPI;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "ByeDPI will share its feature with local network devices";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				"INFOPLIST_KEY_UILaunchStoryboardName[sdk=appletv*]" = LaunchScreenTvOS.storyboard;
+				"INFOPLIST_KEY_UILaunchStoryboardName[sdk=iphone*]" = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 0.9.4;
+				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.byedpi.app.proxy;
+				PRODUCT_NAME = ByeDPI;
+				REGISTER_APP_GROUPS = NO;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				TVOS_DEPLOYMENT_TARGET = 16.0;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		8B5F84982F9F53F5001D2867 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Example/Sources/ByeDPI/ByeDPI.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_ASSET_PATHS = Example/Sources/ByeByeDPI/PreviewContent/PreviewAssets.xcassets;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/Sources/ByeDPIC/include";
+				INFOPLIST_FILE = "Example/Sources/ByeDPIBg/BgProxy-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ByeDPI;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "ByeDPI will share its feature with local network devices";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				"INFOPLIST_KEY_UILaunchStoryboardName[sdk=appletv*]" = LaunchScreenTvOS.storyboard;
+				"INFOPLIST_KEY_UILaunchStoryboardName[sdk=iphone*]" = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 0.9.4;
+				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.byedpi.app.proxy;
+				PRODUCT_NAME = ByeDPI;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = NO;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				TVOS_DEPLOYMENT_TARGET = 16.0;
 				VALIDATE_PRODUCT = YES;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 				XROS_DEPLOYMENT_TARGET = 1.0;
@@ -1487,8 +1754,9 @@
 				REGISTER_APP_GROUPS = NO;
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xrsimulator xros";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 1.0;
@@ -1522,8 +1790,9 @@
 				REGISTER_APP_GROUPS = NO;
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xrsimulator xros";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
@@ -1551,6 +1820,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_INCLUDE_PATHS = "${PROJECT_DIR}/Sources/ByeDPIC/include";
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
@@ -1579,6 +1849,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_INCLUDE_PATHS = "${PROJECT_DIR}/Sources/ByeDPIC/include";
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
@@ -1632,6 +1903,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
@@ -1683,6 +1955,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4,7";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
@@ -1697,10 +1970,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Example/Sources/ByeByeDPI/ByeDPI.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Example/Sources/ByeDPI/ByeDPI.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = Example/Sources/ByeByeDPI/PreviewContent/PreviewAssets.xcassets;
 				DEVELOPMENT_TEAM = KTJ3SX58WK;
 				ENABLE_PREVIEWS = YES;
@@ -1722,7 +1995,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.9.3;
+				MARKETING_VERSION = 0.9.4;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.byedpi.macapp.proxy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = NO;
@@ -1734,7 +2007,7 @@
 				SWIFT_INCLUDE_PATHS = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
-				TVOS_DEPLOYMENT_TARGET = 17.0;
+				TVOS_DEPLOYMENT_TARGET = 16.0;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
@@ -1745,10 +2018,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Example/Sources/ByeByeDPI/ByeDPI.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Example/Sources/ByeDPI/ByeDPI.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = Example/Sources/ByeByeDPI/PreviewContent/PreviewAssets.xcassets;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
@@ -1770,7 +2044,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.9.3;
+				MARKETING_VERSION = 0.9.4;
 				PRODUCT_BUNDLE_IDENTIFIER = org.zeit.byedpi.macapp.proxy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1783,7 +2057,7 @@
 				SWIFT_INCLUDE_PATHS = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3";
-				TVOS_DEPLOYMENT_TARGET = 17.0;
+				TVOS_DEPLOYMENT_TARGET = 16.0;
 				VALIDATE_PRODUCT = YES;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 				XROS_DEPLOYMENT_TARGET = 1.0;
@@ -1971,6 +2245,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INCLUDE_PATHS = "${PROJECT_DIR}/Sources/ByeDPIC/include";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -2020,6 +2295,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INCLUDE_PATHS = "${PROJECT_DIR}/Sources/ByeDPIC/include";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -2125,6 +2401,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INCLUDE_PATHS = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -2178,6 +2455,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INCLUDE_PATHS = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -2336,6 +2614,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		8B5F84962F9F53F5001D2867 /* Build configuration list for PBXNativeTarget "ByeDPIBg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B5F84972F9F53F5001D2867 /* Debug */,
+				8B5F84982F9F53F5001D2867 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8B62D5AB2F87ECAB00DF6F8C /* Build configuration list for PBXNativeTarget "ByeDPICLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2445,6 +2732,22 @@
 				minimumVersion = 1.4.0;
 			};
 		};
+		8B5F848B2F9F53F5001D2867 /* XCRemoteSwiftPackageReference "R" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.8.0;
+			};
+		};
+		8B5F848D2F9F53F5001D2867 /* XCRemoteSwiftPackageReference "TextFieldAlert" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sochalewski/TextFieldAlert";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
 		8BA5E1C32F7108D700F47B9C /* XCRemoteSwiftPackageReference "R" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mac-cain13/R.swift";
@@ -2493,6 +2796,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8B2BF7B72F4DFB9D0016A26B /* XCRemoteSwiftPackageReference "R" */;
 			productName = "plugin:RswiftGenerateInternalResources";
+		};
+		8B5F848A2F9F53F5001D2867 /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B5F848B2F9F53F5001D2867 /* XCRemoteSwiftPackageReference "R" */;
+			productName = RswiftLibrary;
+		};
+		8B5F848C2F9F53F5001D2867 /* TextFieldAlert */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B5F848D2F9F53F5001D2867 /* XCRemoteSwiftPackageReference "TextFieldAlert" */;
+			productName = TextFieldAlert;
 		};
 		8BA5E1C22F7108D700F47B9C /* RswiftLibrary */ = {
 			isa = XCSwiftPackageProductDependency;

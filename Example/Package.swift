@@ -1,20 +1,8 @@
 // swift-tools-version:5.9
 import PackageDescription
 
-let BBDExcludeIOS: [String] = [
-    //Excluded from ByeDPI 'no VPN' target
-    "ByeByeDPIAppPrx.swift",
-    "UI/ScreenView/HomeScreenPrx.swift",
-    //iOS build - Exclude tvOS storyboard
-    "LaunchScreenTvOS.storyboard"
-]
-let BBDExcludeTvOS: [String] = [
-    //Excluded from ByeDPI 'no VPN' target
-    "ByeByeDPIAppPrx.swift",
-    "UI/ScreenView/HomeScreenPrx.swift",
-    //tvOS build - Exclude iOS storyboard
-    "LaunchScreen.storyboard"
-]
+let processStoryboard = "LaunchScreen.storyboard"
+let excludeStoryboard = "LaunchScreenTvOS.storyboard"
 
 let package = Package(
     name: "ByeDPIAppModules",
@@ -38,7 +26,15 @@ let package = Package(
             .product(name: "RswiftLibrary", package: "R.swift"),
             .product(name: "ByeDPIKit", package: "SwByeDPI"),
             .product(name: "SwByeDPI", package: "SwByeDPI")
-        ], exclude: BBDExcludeIOS, resources: [.copy("PrivacyInfo.xcprivacy")], linkerSettings: [
+        ], exclude: [
+            excludeStoryboard
+        ], resources: [
+            .process("Assets.xcassets"),
+            .process("Colors.xcassets"),
+            .process("Icons.xcassets"),
+            .process(processStoryboard),
+            .process("PrivacyInfo.xcprivacy")
+        ], linkerSettings: [
             .linkedFramework("CoreFoundation"),
             .linkedFramework("NetworkExtension")
         ], plugins: [

@@ -26,7 +26,7 @@ final class SBDTestControllerTests: XCTestCase {
         strategyLists = [
             TestConstants.strategies
         ]
-        testConfig = SBDTestConfig(domainRequestsCount: 2, parallelRequestsCount: 10, domainAnswerTimeoutInS: 3, delayBetweenRequestsInS: 0, fakeSNI: "google.com", domainListIDs: Set(domainLists.map { list in
+        testConfig = SBDTestConfig(domainRequestsCount: 2, parallelRequestsCount: 10, domainAnswerTimeoutInS: 3, delayBetweenRequestsInS: 1, fakeSNI: "google.com", domainListIDs: Set(domainLists.map { list in
             return list.id
         }), strategyListIDs: Set(strategyLists.map({ list in
             return list.id

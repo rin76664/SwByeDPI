@@ -1,0 +1,5 @@
+"appIntentStartByeDPIProxyTitle" = "Запустить ByeDPI прокси";
+"appIntentStartByeDPIProxyBgTitle" = "Запустить ByeDPI прокси в фоне";
+"appIntentStartByeDPIProxyDesc" = "Включает ByeDPI прокси";
+"appIntentStopByeDPIProxyTitle" = "Остановить ByeDPI прокси";
+"appIntentStopByeDPIProxyDesc" = "Останавливает ByeDPI прокси";

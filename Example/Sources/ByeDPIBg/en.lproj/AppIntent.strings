@@ -1,0 +1,5 @@
+"appIntentStartByeDPIProxyTitle" = "Start ByeDPI proxy";
+"appIntentStartByeDPIProxyBgTitle" = "Start ByeDPI proxy in background";
+"appIntentStartByeDPIProxyDesc" = "Starts ByeDPI proxy";
+"appIntentStopByeDPIProxyTitle" = "Stop ByeDPI proxy";
+"appIntentStopByeDPIProxyDesc" = "Stops ByeDPI proxy";

@@ -7,7 +7,7 @@ public final class YouTubeTestDomains {
       "youtu.be",
       "yt.be",
       "youtube.com",
-      "yting.com",
+      "ytimg.com",
       "youtubekids.com",
       "youtube-nocookie.com",
       "returnyoutubedislikeapi.com",

@@ -24,7 +24,12 @@ extension Socks5Tunnel {
         thread.name = "Tun2Socks(hev-socks5-tunnel)"
         _hevSocksThread = thread
         thread.start()
-        sleep(1)
+        let sleepTask = Task {
+            let oneSecInNanos: UInt64 = 1_000_000_000
+            try? await Task.sleep(nanoseconds: oneSecInNanos)
+            return 0
+        }
+        _ = await sleepTask.value
         return opCode
     }
     

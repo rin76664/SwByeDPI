@@ -10,6 +10,11 @@ import Foundation
 
 final class TestConstants {
     
+    static let builtInStrategies: [Set<SBDStrategy>] = [
+        BuiltInDPIeStrategies.strategiesList.strategies,
+        ExternalDPIeStrategies.strategiesList.strategies,
+    ]
+    
     nonisolated(unsafe) static let androidBBDConfigDict: [String: Any] = [
         "app": "io.github.romanvht.byedpi",
         "version":"1.7.3",

@@ -622,7 +622,12 @@ extension SBDTestController {
             if (delayBetweenRequestsInS == 0 || cancelTkSource.cancellationToken.cancellationRequested) {
                 continue
             }
-            sleep(UInt32(delayBetweenRequestsInS))
+            let sleepTask = Task {
+                let nanos = UInt64(delayBetweenRequestsInS) * 1_000_000_000
+                try? await Task.sleep(nanoseconds: nanos)
+                return 0
+            }
+            _ = await sleepTask.value
         }
         let testRes = SBDDomainTestResult(domain: domain, successRequestsCount: success, failedRequestsCount: fail)
         

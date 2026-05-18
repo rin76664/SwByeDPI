@@ -51,20 +51,15 @@ open class ByeDPI {
             allocatedStrings.append(pointer)
         }
             
-        // Выделяем память для argv
         let argv = UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>.allocate(capacity: args.count + 1)
-        // Инициализируем argv
         for (index, pointer) in allocatedStrings.enumerated() {
             argv.advanced(by: index).pointee = pointer
         }
             
-        // NULL в конце массива
         argv.advanced(by: args.count).pointee = nil
             
         defer {
-            // Освобождаем все строки
             allocatedStrings.forEach { $0.deallocate() }
-            // Освобождаем argv
             argv.deallocate()
         }
         return start_proxy(argc, argv)
@@ -91,25 +86,19 @@ open class ByeDPI {
                 allocatedStrings.append(pointer)
             }
                 
-            // Выделяем память для argv
             let argv = UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>.allocate(capacity: args.count + 1)
-            // Инициализируем argv
             for (index, pointer) in allocatedStrings.enumerated() {
                 argv.advanced(by: index).pointee = pointer
             }
                 
-            // NULL в конце массива
             argv.advanced(by: args.count).pointee = nil
                 
             defer {
-                // Освобождаем все строки
                 allocatedStrings.forEach { $0.deallocate() }
-                // Освобождаем argv
                 argv.deallocate()
             }
             let startRes = start_proxy(argc, argv)
             if (startRes == 0) {
-                //Peacefully proxy stop
                 return
             }
             startErrCompletion(.startError(errCode: Int(startRes)))
@@ -129,47 +118,47 @@ open class ByeDPI {
             return .alreadyRunning
         }
         let argc = Int32(clamping: args.count)
-        nonisolated(unsafe) var err: BDError? = nil
-        let thread = Thread {
-            let utf8CStrings = args.map { $0.utf8CString }
-            var allocatedStrings: [UnsafeMutablePointer<CChar>] = []
-            for utf8CString in utf8CStrings {
-                let pointer = UnsafeMutablePointer<CChar>.allocate(capacity: utf8CString.count)
-                utf8CString.withUnsafeBytes { buffer in
-                    pointer.initialize(from: buffer.bindMemory(to: CChar.self).baseAddress!, count: utf8CString.count)
+        let startTask = Task {
+            nonisolated(unsafe) var err: BDError? = nil
+            let thread = Thread {
+                let utf8CStrings = args.map { $0.utf8CString }
+                var allocatedStrings: [UnsafeMutablePointer<CChar>] = []
+                for utf8CString in utf8CStrings {
+                    let pointer = UnsafeMutablePointer<CChar>.allocate(capacity: utf8CString.count)
+                    utf8CString.withUnsafeBytes { buffer in
+                        pointer.initialize(from: buffer.bindMemory(to: CChar.self).baseAddress!, count: utf8CString.count)
+                    }
+                    allocatedStrings.append(pointer)
                 }
-                allocatedStrings.append(pointer)
+                    
+                let argv = UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>.allocate(capacity: args.count + 1)
+                for (index, pointer) in allocatedStrings.enumerated() {
+                    argv.advanced(by: index).pointee = pointer
+                }
+                    
+                argv.advanced(by: args.count).pointee = nil
+                    
+                defer {
+                    allocatedStrings.forEach { $0.deallocate() }
+                    argv.deallocate()
+                }
+                let startRes = start_proxy(argc, argv)
+                if (startRes != 0) {
+                    err = .startError(errCode: Int(startRes))
+                }
             }
-                
-            // Выделяем память для argv
-            let argv = UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>.allocate(capacity: args.count + 1)
-            // Инициализируем argv
-            for (index, pointer) in allocatedStrings.enumerated() {
-                argv.advanced(by: index).pointee = pointer
-            }
-                
-            // NULL в конце массива
-            argv.advanced(by: args.count).pointee = nil
-                
-            defer {
-                // Освобождаем все строки
-                allocatedStrings.forEach { $0.deallocate() }
-                // Освобождаем argv
-                argv.deallocate()
-            }
-            let startRes = start_proxy(argc, argv)
-            if (startRes != 0) {
-                err = .startError(errCode: Int(startRes))
-            }
-        }
-        thread.name = "ByeDPI(ciadpi)"
-        _dpiThread = thread
+            thread.name = "ByeDPI(ciadpi)"
+            _dpiThread = thread
 #if DEBUG
-        testableDpiThread = thread
+            testableDpiThread = thread
 #endif
-        thread.start()
-        sleep(1)
-        return err
+            thread.start()
+            let oneSecInNanos: UInt64 = 1_000_000_000
+            try? await Task.sleep(nanoseconds: oneSecInNanos)
+            return err
+        }
+        let startErr = await startTask.value
+        return startErr
     }
 #endif
     
