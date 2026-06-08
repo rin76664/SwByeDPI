@@ -1,0 +1,65 @@
+name: Build ByeDPIBg IPA
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Xcode version
+        run: |
+          xcodebuild -version
+          xcodebuild -showsdks
+
+      - name: Show project schemes
+        run: |
+          xcodebuild -list
+
+      - name: Build ByeDPIBg unsigned app
+        run: |
+          set -e
+
+          xcodebuild \
+            -scheme ByeDPIBg \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            clean build
+
+      - name: Package IPA
+        run: |
+          set -e
+
+          APP_PATH=$(find ~/Library/Developer/Xcode/DerivedData -path "*/Build/Products/Release-iphoneos/*.app" | grep -i "ByeDPIBg.app" | head -n 1)
+
+          if [ -z "$APP_PATH" ]; then
+            echo "ByeDPIBg.app not found"
+            find ~/Library/Developer/Xcode/DerivedData -path "*/Build/Products/Release-iphoneos/*.app"
+            exit 1
+          fi
+
+          echo "Found app: $APP_PATH"
+
+          rm -rf Payload
+          mkdir Payload
+          cp -R "$APP_PATH" Payload/
+
+          zip -qry ByeDPIBg-unsigned.ipa Payload
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ByeDPIBg-unsigned-ipa
+          path: ByeDPIBg-unsigned.ipa
